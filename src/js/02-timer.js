@@ -1,8 +1,6 @@
-import  flatpickr  from "flatpickr";
+import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
-
 
 import { convertMs } from './utils/convertMs';
 import { addLeadingZero } from './utils/addLeadingZero';
@@ -16,11 +14,6 @@ const dataMinutes = document.querySelector('[data-minutes]');
 const dataSeconds = document.querySelector('[data-seconds]');
 
 buttonStart.setAttribute('disabled', true);
-
-
-
-
-
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -32,13 +25,9 @@ const options = {
       Notify.failure('Please choose a date in the future');
       buttonStart.setAttribute('disabled', true);
     }
-
-
     buttonStart.addEventListener('click', () => {
       const deadline = selectedDates[0].getTime();
       let timerId = null;
-
-
       function countDownTimer() {
         const dateDifference = convertMs(deadline - Date.now());
         const { days, hours, minutes, seconds } = dateDifference;
@@ -47,7 +36,6 @@ const options = {
           buttonStart.setAttribute('disabled', false);
           calendarInput.setAttribute('disabled', false);
         }
-
         const timerDays = addLeadingZero(String(days));
         const timerHours = addLeadingZero(String(hours));
         const timerMinutes = addLeadingZero(String(minutes));
@@ -57,12 +45,9 @@ const options = {
         dataMinutes.innerHTML = timerMinutes;
         dataSeconds.innerHTML = timerSeconds;
       }
-
-
       countDownTimer();
       timerId = setInterval(countDownTimer, 1000);
     });
   },
 };
-
 const fp = flatpickr(calendarInput, options);
