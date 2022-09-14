@@ -27,7 +27,7 @@ const options = {
       Notify.failure('Виберіть майбутню дату');
       buttonStart.setAttribute('disabled', true);
     }
-    console.log(onClose)
+    
 
     buttonStart.addEventListener('click', () => {
       const deadline = selectedDates[0].getTime();
