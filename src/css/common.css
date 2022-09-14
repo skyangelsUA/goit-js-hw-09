@@ -16,3 +16,37 @@ img {
   display: block;
   max-width: 100%;
 }
+
+button {
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+input {
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+.timer {
+  display: flex;
+}
+
+.field {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.field:last-child {
+  margin-right: 0;
+}
+
+.field .value {
+  font-size: 56px;
+}
