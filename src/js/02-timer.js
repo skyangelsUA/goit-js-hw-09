@@ -6,6 +6,19 @@ import { convertMs } from './utils/convertMs';
 import { addLeadingZero } from './utils/addLeadingZero';
 
 
+const calendar = document.querySelector();
+const btnStart = document.querySelector();
+const seconds = document.querySelector();
+const minutes = document.querySelector();
+const hours = document.querySelector();
+const days = document.querySelector();
+
+
+
+btnStart.setAttribute();
+
+
+
 
 const options = {
   enableTime: true,
