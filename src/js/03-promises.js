@@ -19,9 +19,13 @@ function submit(event) {
 function promiseNotify({ delay, step, amount }) {
   for (let i = 1; i <= amount; i += 1) {
     console.log(delay, step, amount, i);
-    createPromise(i, delay).then(({ position, delay }) => {
-      Notify.success(`Виконаний проміс ${position} за ${delay}мілісекунд`);
-    });
+    createPromise(i, delay)
+      .then(({ position, delay }) => {
+      Notify.success(`Виконаний проміс ${position} за ${delay} мс`);
+      })
+    .catch(({ position, delay }) => {
+        Notify.failure(`Завалений проміс ${position} за ${delay}мс`);
+      });
     delay += step;
   }
 }
